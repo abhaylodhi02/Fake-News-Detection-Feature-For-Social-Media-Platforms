@@ -37,7 +37,7 @@ def upload_file():
     return jsonify({"error": "File upload failed"}), 500
 
 def evaluate(file_path):
-    pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
+    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'  # Example path for Linux
     img = Image.open(file_path)
     text = pytesseract.image_to_string(img)
     prediction = prediction_on_custom_input(text)
