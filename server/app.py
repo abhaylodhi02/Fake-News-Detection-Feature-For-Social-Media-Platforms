@@ -50,7 +50,7 @@ def prediction_on_custom_input(text):
     # Pad the sequence
     padded_encoded_title = keras.preprocessing.sequence.pad_sequences(encoded, maxlen=max_length, padding='pre')
 
-    model_path = 'C:/Users/HP/OneDrive/Desktop/Threads-Posts-Safety/server/Model/-Fake_news_predictor.h5'
+    model_path = 'server/Model/-Fake_news_predictor.h5'
     custom_objects = {'Orthogonal': keras.initializers.Orthogonal(), 'LSTM': keras.layers.LSTM, 'GlorotUniform': keras.initializers.GlorotUniform()}
 
     model = keras.models.load_model(model_path, custom_objects=custom_objects)
