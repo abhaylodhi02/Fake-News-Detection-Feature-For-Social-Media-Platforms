@@ -1,0 +1,83 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from "react";
+import imageIcon from '../assets/GifStorage/imageIcon.gif';
+
+
+
+const FakeNewsDetector = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [text, setText] = useState("");
+  const [prediction, setPrediction] = useState("");
+
+  const onFileChange = event => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const onFileUpload = async () => {
+    if (!selectedFile) return;
+
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+
+    const response = await fetch("http://127.0.0.1:5000/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    setPrediction(data.result[0]);
+    setText(data.result[1]);
+  };
+
+  return (
+    <div className="fake-news-detector">
+      <h1 className="fake-news-heading">Fake News Detector</h1>
+      
+      <div className="container">
+        <div className="display-area">
+          <div className="field">
+            <h2>Text</h2>
+            <p id="text-content">{text}</p>
+          </div>
+
+          <div className="field">
+            <h2>Prediction</h2>
+            <p id="prediction-content">{prediction}</p>
+          </div>
+        </div>
+      </div>
+
+        <div className="flex-container">
+            <label htmlFor="file-input">
+              <img
+                src={imageIcon}
+                alt="Click to upload"
+                style={{ cursor: 'pointer', width: '100px', height: '100px' }}
+              />
+            </label>
+           
+            <input className='input-image'
+              id="file-input"
+              type="file"
+              onChange={onFileChange}
+              style={{ display: 'none' }}
+            />
+            
+            <button
+              onClick={onFileUpload}
+              className="btn btn-outline-secondary orange-active"
+              style={{width : "80px"}}
+              type="button"
+              id="inputGroupFileAddon04"
+              disabled={!selectedFile}
+            >
+              Upload
+            </button>
+        </div>
+         <h3 className='message'><i>(Click on the icon to upload the image)</i></h3>
+
+    </div>
+  );
+};
+
+export default FakeNewsDetector;

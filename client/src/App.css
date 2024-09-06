@@ -1,0 +1,286 @@
+
+.fake-news-detector{
+  min-width: 300px;
+  min-height: 500px;
+
+}
+
+.fake-news-heading{
+  margin: 30px 30px 30px 30px;
+
+  text-align: center;
+  font-size: 50px;
+  
+}
+.container {
+  width: 80%;
+  margin: 30px 10px 20px 10px;
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Flexbox layout for two fields */
+.display-area {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Styles for each display field */
+.field {
+  flex: 1;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.field h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Text styles */
+.field p {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.6;
+}
+
+.post-display{
+  margin: 20px 20px 20px 20px;
+}
+.create-post{
+  
+  width: 80%;
+  margin-top: 50px;
+  margin : 5%;
+  
+}
+.app-container{
+  display: flex;
+}
+
+.content{
+  width : 100%;
+}
+
+.sidebar{
+  min-height: 600px;
+
+}
+
+.post-card{
+  margin : 20px 50px;
+  max-width: 25rem;
+  min-width: 15rem;
+}
+
+.hashtag{
+  margin : 0px 5px;
+
+}
+.reaction{
+  width : 100%;
+  margin: 15px 0px 0px 0px;
+}
+
+.create-post{
+  width: 80%;
+  margin-top: 50px;
+  margin : 5%;
+  
+}
+
+.input-area{
+  width : 80%;
+}
+
+.welcome-message{
+  margin: 100px;
+}
+.orange-active {
+  background-color: rgb(170, 6, 6) !important;
+  color: white !important;
+}
+
+.flex-container  {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.input-image{
+  margin: 0px 30px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
+  background: #fff;
+  width: 80%;
+  max-width: 500px; /* Limits the width on large screens */
+  padding-bottom: 2px;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.text {
+  color: rgb(170, 6, 6);
+  font-size: 4vw; /* Responsive font size */
+  font-weight: 700;
+}
+
+.underline {
+  height: 6px;
+  width: 61px;
+  background: rgb(170, 6, 6);
+  border-radius: 9px;
+}
+
+.inputs {
+  margin: 20px; /* Reduced margin for smaller screens */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  height: 50px;
+  width: 100%; /* Full width for smaller screens */
+  max-width: 380px;
+  background: #eaeaea;
+  border-radius: 6px;
+}
+
+.input img {
+  margin: 0px 10px;
+}
+
+.inputs input {
+  height: 50px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #797979;
+  font-size: 16px;
+}
+
+.forgot-password {
+  text-align: center;
+  color: #797979;
+  font-size: 18px;
+}
+
+.forgot-password span {
+  color: rgb(170, 6, 6);
+  cursor: pointer;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 39px;
+  color: #fff;
+  background: rgb(170, 6, 6);
+  border-radius: 35px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.gray {
+  background: #eaeaea;
+  color: #676767;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;
+  }
+
+  .inputs {
+    margin: 10px;
+  }
+
+  .input {
+    height: 45px;
+  }
+
+  .submit-container {
+    gap: 10px;
+    margin: 20px auto;
+  }
+
+  .submit {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 6vw;
+  }
+
+  .forgot-password {
+    font-size: 16px;
+  }
+
+  .submit {
+    font-size: 16px;
+    width: 120px;
+  }
+}
+
+
+.message {
+  color: grey;
+  display: flex;
+  margin-left: auto; /* Centers the message container */
+  justify-content: center; /* Ensures content is centered */
+  padding: 10px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .message {
+    margin-left: 20px; /* Reduces margin for tablet-size screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .message {
+    margin-left: 10px; /* Reduces margin for mobile devices */
+    justify-content: flex-start; /* Aligns text to the left on smaller screens */
+  }
+}
