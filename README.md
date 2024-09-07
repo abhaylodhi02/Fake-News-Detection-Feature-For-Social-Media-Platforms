@@ -6,7 +6,8 @@ Objective :  This project focuses on prevention of circulation of fake news on s
 
 Composition Of This Project:
 1. Fake News Detection Model is developed by training LSTM on kaggle fake news dataset (Learn More : https://github.com/abhaylodhi02/Fake-News-Detection-System)
-2. Web UI is developed via React JS, Tailwind, Bootstrap.
+2. Web fontend UI is developed via React JS, Tailwind & Bootstrap (It utilized various concepts of React Js : props, hooks, api handling, state management, routers, etc. ).
+3. Web backend is developed via Flask.
 
 How to use?
 1. Select an image of post or news
