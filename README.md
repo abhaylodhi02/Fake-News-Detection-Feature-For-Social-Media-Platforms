@@ -1,5 +1,6 @@
-(Access the live project demo : https://fake-news-detection-feature-for-social-media-platforms.vercel.app/)
 Guide To The Project:-
+
+(Access the live project demo : https://fake-news-detection-feature-for-social-media-platforms.vercel.app/)
 
 Objective :  This project focuses on prevention of circulation of fake news on social media platforms via posts, threads, and tweets.
 
