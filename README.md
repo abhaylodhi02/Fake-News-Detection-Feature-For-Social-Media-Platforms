@@ -14,3 +14,5 @@ How to use?
 2. Upload it.
 3. Wait a little for the prediction
 4. You can utilize the custom images available on this repository mention as custom_img1 and custom_img2.
+
+(Note : Due to non premium deploy services, server may show a significant amount of lag! But this has nothing to do with the functionality of the project.)
