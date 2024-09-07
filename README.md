@@ -1,1 +1,13 @@
-This project focuses on prevention of circulation of fake news on social media platforms via posts, threads, and tweets.
+Guide To The Project:-
+
+Objective :  This project focuses on prevention of circulation of fake news on social media platforms via posts, threads, and tweets.
+
+Composition Of This Project:
+1. Fake News Detection Model is developed by training LSTM on kaggle fake news dataset (Learn More : https://github.com/abhaylodhi02/Fake-News-Detection-System)
+2. Web UI is developed via React JS, Tailwind, Bootstrap.
+
+How to use?
+1. Select an image of post or news
+2. Upload it.
+3. Wait a little for the prediction
+4. You can utilize the custom images available on this repository mention as custom_img1 and custom_img2.
