@@ -2,8 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 import imageIcon from '../assets/GifStorage/imageIcon.gif';
 
-
-
 const FakeNewsDetector = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [text, setText] = useState("");
@@ -19,14 +17,22 @@ const FakeNewsDetector = () => {
     const formData = new FormData();
     formData.append("file", selectedFile);
 
-    const response = await fetch("https://render.com/docs/web-services#port-binding", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("https://fake-news-detection-feature-for-social.onrender.com/upload", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
-    setPrediction(data.result[0]);
-    setText(data.result[1]);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      setPrediction(data.result[0]);
+      setText(data.result[1]);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
   };
 
   return (
@@ -47,35 +53,34 @@ const FakeNewsDetector = () => {
         </div>
       </div>
 
-        <div className="flex-container">
-            <label htmlFor="file-input">
-              <img
-                src={imageIcon}
-                alt="Click to upload"
-                style={{ cursor: 'pointer', width: '100px', height: '100px' }}
-              />
-            </label>
-           
-            <input className='input-image'
-              id="file-input"
-              type="file"
-              onChange={onFileChange}
-              style={{ display: 'none' }}
-            />
-            
-            <button
-              onClick={onFileUpload}
-              className="btn btn-outline-secondary orange-active"
-              style={{width : "80px"}}
-              type="button"
-              id="inputGroupFileAddon04"
-              disabled={!selectedFile}
-            >
-              Upload
-            </button>
-        </div>
-         <h3 className='message'><i>(Click on the icon to upload the image)</i></h3>
-
+      <div className="flex-container">
+        <label htmlFor="file-input">
+          <img
+            src={imageIcon}
+            alt="Click to upload"
+            style={{ cursor: 'pointer', width: '100px', height: '100px' }}
+          />
+        </label>
+       
+        <input className='input-image'
+          id="file-input"
+          type="file"
+          onChange={onFileChange}
+          style={{ display: 'none' }}
+        />
+        
+        <button
+          onClick={onFileUpload}
+          className="btn btn-outline-secondary orange-active"
+          style={{ width: "80px" }}
+          type="button"
+          id="inputGroupFileAddon04"
+          disabled={!selectedFile}
+        >
+          Upload
+        </button>
+      </div>
+      <h3 className='message'><i>(Click on the icon to upload the image)</i></h3>
     </div>
   );
 };
