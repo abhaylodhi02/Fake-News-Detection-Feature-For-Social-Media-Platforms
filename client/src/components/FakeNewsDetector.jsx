@@ -81,6 +81,7 @@ const FakeNewsDetector = () => {
         </button>
       </div>
       <h3 className='message'><i>(Click on the icon to upload the image or visit the Github link mentioned below to understand the working.)</i></h3>
+      <h3 className='message'><i>Note: Due to slow servers prediction may take some time.</i></h3>
     </div>
   );
 };
