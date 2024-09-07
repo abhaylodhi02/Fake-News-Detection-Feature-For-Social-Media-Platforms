@@ -14,7 +14,7 @@ nltk.download('stopwords')
 stop_words = nltk.corpus.stopwords.words('english')
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app, resources={r"/*": {"origins": "https://fake-news-detection-feature-for-social-media-platforms.vercel.app"}}) # Enable CORS for all routes
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'server/uploads'
 
