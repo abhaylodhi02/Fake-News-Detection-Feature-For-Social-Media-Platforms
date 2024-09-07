@@ -18,7 +18,7 @@ const FakeNewsDetector = () => {
     formData.append("file", selectedFile);
 
     try {
-      const response = await fetch("https://fake-news-detection-feature-for-social.onrender.com/upload", {
+      const response = await fetch("https://fake-news-detection-feature-for-social.onrender.com/uploads", {
         method: "POST",
         body: formData,
       });
