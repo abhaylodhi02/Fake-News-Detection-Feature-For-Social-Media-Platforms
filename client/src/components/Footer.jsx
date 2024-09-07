@@ -36,7 +36,7 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
                                 <li className="mb-4">
                                     <a
-                                        href="https://github.com/abhaylodhi02"
+                                        href="https://github.com/abhaylodhi02/Fake-News-Detection-Feature-For-Social-Media-Platforms"
                                         className="hover:underline"
                                         target="_blank"
                                         rel="noreferrer"
