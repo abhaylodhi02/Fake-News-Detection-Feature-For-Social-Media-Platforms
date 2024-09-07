@@ -18,7 +18,7 @@ CORS(app, resources={r"/*": {"origins": "https://fake-news-detection-feature-for
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'server/uploads'
 
-@app.route('/upload', methods=['POST'])
+@app.route('/uploads', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
