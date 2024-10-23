@@ -8,6 +8,7 @@ from tensorflow import keras
 import regex as re
 import nltk
 import numpy as np
+import cv2
 
 # Download the stopwords
 nltk.download('stopwords')
@@ -38,10 +39,43 @@ def upload_file():
 
 def evaluate(file_path):
     pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'  # Example path for Linux
-    img = Image.open(file_path)
-    text = pytesseract.image_to_string(img)
+    # img = Image.open(file_path)
+    # text = pytesseract.image_to_string(img)
+    text = process_image(file_path)
     prediction = prediction_on_custom_input(text)
     return [prediction,text]
+
+def preprocess_image(image):
+    # Check if the image is already grayscale
+    if len(image.shape) == 2:
+        gray = image  # Image is already grayscale
+    else:
+        # Convert to grayscale
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    return gray
+
+def extract_text(image):
+    # Extract text from the preprocessed image using pytesseract
+    return pytesseract.image_to_string(image)
+
+def process_image(path):
+    # Load the image from the given path
+    img = cv2.imread(path)
+
+    # Check if the image was loaded successfully
+    if img is None:
+        print("Error: Could not read the image.")
+        return ""
+
+    # Preprocess the image (convert to grayscale only)
+    preprocessed_img = preprocess_image(img)
+
+    # Extract text from the preprocessed image
+    text = extract_text(preprocessed_img)
+
+    return text
+
 
 def prediction_on_custom_input(text):
     encoded = word_embedding(text)
