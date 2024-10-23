@@ -4,9 +4,9 @@ FROM python:3.11-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Install Tesseract OCR and its dependencies
+# Install system dependencies, including Tesseract and OpenCV dependencies
 RUN apt-get update && \
-    apt-get install -y tesseract-ocr && \
+    apt-get install -y tesseract-ocr libgl1-mesa-glx && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -27,4 +27,3 @@ EXPOSE 5000
 
 # Run the application
 CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
-
