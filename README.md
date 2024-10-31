@@ -2,16 +2,19 @@ Guide To The Project:-
 
 (Access the live project demo : https://fake-news-detection-feature-for-social-media-platforms.vercel.app/)
 
-Objective :  This project focuses on prevention of circulation of fake news on social media platforms via posts, threads, and tweets.
+# Objective
+This project focuses on prevention of circulation of fake news on social media platforms via posts, threads, and tweets.
 
-Composition Of This Project:
+# Composition Of This Project:
 1. Fake News Detection Model (Learn more about R&D of model: https://github.com/abhaylodhi02/Fake-News-Detection-System).
 2. Web fontend UI is developed via React JS, Tailwind & Bootstrap and deployed on Vercel.
 3. Web backend is developed via Flask and deployed on Render using Docker image.
 4. OCR & OpenCV integration for image based text predictions.
 
-How to use?
+# How to use?
+
    ![insta_post](https://github.com/user-attachments/assets/113efa6b-28c8-4dc4-81bf-05fb3d268d9d)
+   
 1. Select an image of post or news (example :insta_post)
    
    ![Screenshot 2024-10-31 112820](https://github.com/user-attachments/assets/74195378-e8a1-449f-9d2b-981a5734503e)
