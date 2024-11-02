@@ -1,5 +1,7 @@
 Guide To The Project:-
 
+
+
 (Access the live project demo : https://fake-news-detection-feature-for-social-media-platforms.vercel.app/)
 
 # Objective
@@ -12,6 +14,13 @@ This project focuses on prevention of circulation of fake news on social media p
    fake news detection feature.
 3. Web backend is developed via Flask and deployed on Render using Docker.
 4. OCR & OpenCV integration for image based text predictions.
+
+# Tools:
+Fake News Detection Model: Python, NumPy, Pandas, Keras, TensorFlow, NLP, NLTK, LSTM, Scikit Learn, OpenCV and OCR.
+
+User Interface: React JS, Bootstrap5 and Tailwind CSS.
+
+Deployment Services: Vercel, Render and DockerImage.
 
 # How to use?
 
